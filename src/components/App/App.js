@@ -22,11 +22,6 @@ class App extends Component {
         </Router>
         
 
-
-=======
-        <Header className='App-header' title={'title'}/>
-        <SearchGif />
->>>>>>> 0ce38d4c63e122bb364cb9443d181a8b91c9ae98
       </div>
     );
   }
