@@ -11,6 +11,20 @@ import axios from 'axios';
 
 
 function* rootSaga(){
+    yield takeEvery('FETCH_FAVORITES', fetchFavorites);
+}
+
+// Sends an axios request
+// TODO: then update reducer SET_FAVORITES
+function* fetchFavorites(action) {
+    try {
+        const favorites = yield axios.get('/api/favorites');
+        // const nextAction = { type: 'SET_FAVORITES', payload: favorites }
+        // yield put(nextAction);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    }
 
 }
 
