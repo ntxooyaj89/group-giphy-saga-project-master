@@ -19,8 +19,7 @@ router.get('/', (req, res) => {
         console.log(response.data.data);
         res.send(response.data.data);
     }).catch((error) => {
-        console.log('bad path');
-        console.log('Error in get /search',error);
+        console.log('Error in get /search');
         res.sendStatus(500);
     });
 })
