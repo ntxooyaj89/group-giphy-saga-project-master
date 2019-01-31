@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Header from './../Header/Header.js';
-import SearchForm from './../SearchForm/SearchForm.js';
+import SearchGif from './../SearchGif/SearchGif.js';
 
 
 class App extends Component {
-
   render() {
     return (
       <div>
-        <Header className='App-header'/>
-        <SearchForm />
+        <Header className='App-header' title={'title'}/>
+        <SearchGif />
       </div>
     );
   }
