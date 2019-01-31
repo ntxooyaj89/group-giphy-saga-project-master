@@ -7,10 +7,12 @@ class FavoriteGifs extends Component {
     render() {
         return (
             <Header />
-            {}
+            {this.props.rs.}
         );
     }
 }
 
-const mapReduxStoreToProps = (rs) => ({rs});
+const mapReduxStoreToProps = (reduxStore) => { 
+    reduxStore: reduxStore,
+};
 export default connect(mapReduxStoreToProps)(FavoriteGifs);
