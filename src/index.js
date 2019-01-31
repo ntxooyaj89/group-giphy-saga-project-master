@@ -11,20 +11,31 @@ import axios from 'axios';
 
 
 function* rootSaga(){
-    yield takeEvery('ADD_FAVORITE', addFavorite)
-
+    yield takeEvery('ADD_FAVORITE', addFavorite);
+    yield takeEvery('FETCH_FAVORITES', fetchFavorites);
 }
 
 function* addFavorite(action){
-    try{
+    try {
         yield axios.post('/api/favorite', action.payload);
         const nextAction = {type:'FETCH_FAVORITE'};
         yield put(nextAction)
-    }catch(error){
+    } catch(error){
         console.log('There is error in POST', error);
-        
-    }
+    }    
+}
 
+// Sends an axios request
+// TODO: then update reducer SET_FAVORITES
+function* fetchFavorites(action) {
+    try {
+        const favorites = yield axios.get('/api/favorites');
+        // const nextAction = { type: 'SET_FAVORITES', payload: favorites }
+        // yield put(nextAction);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    }
 }
 
 const sagaMiddleware = createSagaMiddleware();
