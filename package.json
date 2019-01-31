@@ -10,6 +10,7 @@
     "pg": "^7.4.1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-redux": "^6.0.0",
     "react-scripts": "^2.1.1",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.0.0"
