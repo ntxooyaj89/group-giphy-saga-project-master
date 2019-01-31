@@ -14,7 +14,9 @@ function* rootSaga() {
     yield takeEvery('ADD_FAVORITE', addFavorite);
     yield takeEvery('FETCH_FAVORITES', fetchFavorites);
 }
+ 
 
+// this will run when someone has an action type of 'ADD_FAVORITE'. 
 function* addFavorite(action) {
     try {
         yield axios.post('/api/favorite', action.payload);
