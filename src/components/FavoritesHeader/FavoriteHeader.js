@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 
-class Header extends Component {
+class FavoritesHeader extends Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ class Header extends Component {
 }
 
 
-export default connect()(Header);
+export default connect()(FavoritesHeader);
