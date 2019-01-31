@@ -8,15 +8,14 @@ import axios from 'axios';
 
 
 function* rootSaga(){
-    
+
 }
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
-        plantList,
-        boxList
+        
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
