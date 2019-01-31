@@ -23,6 +23,7 @@ class SearchForm extends Component {
     render() {
         return(
             <div>
+                <h3>This is the search form:</h3>
                 <form className="searchForm">
                   <input type="text" placeholder="Search.." id="search" onChange={this.handleChange}/>
                   <button type="submit" onClick={this.handleSearch}>Search</button>

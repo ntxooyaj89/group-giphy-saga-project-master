@@ -55,7 +55,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
-        favoriteFruit,
+        favoriteReducer,
 
 
     }),
