@@ -38,10 +38,23 @@ function* fetchFavorites(action) {
     }
 }
 
+//reducer- holds redux state based on action type
+const favoriteFruit = (state = [], action) => {
+    console.log('in favoriteFruit', action.payload);
+    switch (action.type) {
+        case 'SET_FAVORITES':
+        return action.payload;
+        default:
+        return state;
+    }   
+}
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
     combineReducers({
+        favoriteFruit,
+
         
     }),
     // Add sagaMiddleware to our store
