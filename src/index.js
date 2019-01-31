@@ -11,7 +11,18 @@ import axios from 'axios';
 
 
 function* rootSaga(){
+    yield takeEvery('ADD_FAVORITE', addFavorite);
     yield takeEvery('FETCH_FAVORITES', fetchFavorites);
+}
+
+function* addFavorite(action){
+    try {
+        yield axios.post('/api/favorite', action.payload);
+        const nextAction = {type:'FETCH_FAVORITE'};
+        yield put(nextAction)
+    } catch(error){
+        console.log('There is error in POST', error);
+    }    
 }
 
 // Sends an axios request
@@ -25,7 +36,6 @@ function* fetchFavorites(action) {
         console.log(error);
         alert(error);
     }
-
 }
 
 const sagaMiddleware = createSagaMiddleware();
