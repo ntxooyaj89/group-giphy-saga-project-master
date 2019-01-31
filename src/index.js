@@ -10,19 +10,19 @@ import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-function* rootSaga(){
+function* rootSaga() {
     yield takeEvery('ADD_FAVORITE', addFavorite);
     yield takeEvery('FETCH_FAVORITES', fetchFavorites);
 }
 
-function* addFavorite(action){
+function* addFavorite(action) {
     try {
         yield axios.post('/api/favorite', action.payload);
-        const nextAction = {type:'FETCH_FAVORITE'};
+        const nextAction = { type: 'FETCH_FAVORITE' };
         yield put(nextAction)
-    } catch(error){
+    } catch (error) {
         console.log('There is error in POST', error);
-    }    
+    }
 }
 
 // Sends an axios request
@@ -39,14 +39,14 @@ function* fetchFavorites(action) {
 }
 
 //reducer- holds redux state based on action type
-const favoriteFruit = (state = [], action) => {
-    console.log('in favoriteFruit', action.payload);
+const favoriteReducer = (state = [], action) => {
+    console.log('in favoriteReducer', action.payload);
     switch (action.type) {
         case 'SET_FAVORITES':
-        return action.payload;
+            return action.payload;
         default:
-        return state;
-    }   
+            return state;
+    }
 }
 
 const sagaMiddleware = createSagaMiddleware();
@@ -55,7 +55,7 @@ const store = createStore(
     combineReducers({
         favoriteFruit,
 
-        
+
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
