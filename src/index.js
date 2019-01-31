@@ -19,8 +19,8 @@ function* rootSaga(){
 function* fetchFavorites(action) {
     try {
         const favorites = yield axios.get('/api/favorites');
-        // const nextAction = { type: 'SET_FAVORITES', payload: favorites }
-        // yield put(nextAction);
+        const nextAction = { type: 'SET_FAVORITES', payload: favorites }
+        yield put(nextAction);
     } catch (error) {
         console.log(error);
         alert(error);
