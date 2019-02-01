@@ -7,7 +7,7 @@ class FavoriteButton extends Component {
 
     addFavorite = () => {
         console.log('this is addGifs');
-        const action = { type: 'ADD_FAVORITE'} // waiting on payload from ImageCard...
+        const action = { type: 'ADD_FAVORITE', payload: { url: this.props.url} };
         this.props.dispatch(action);
 
     }
@@ -16,7 +16,7 @@ class FavoriteButton extends Component {
     render() {
         return (
             <div>
-               <button onClick={this.addFavorite.gifs}>Add To Favorite</button>
+               <button onClick={this.addFavorite}>Add To Favorite</button>
             </div>
         );
     }
