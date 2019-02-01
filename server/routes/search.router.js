@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
         // url: `${BASE_URL}${API_KEY}&q=${term}&limit=25&offset=0&rating=G&lang=en`
         url: myUrl
     }).then((response) => {
-        console.log(response.data.data);
         res.send(response.data.data);
     }).catch((error) => {
         res.sendStatus(500);

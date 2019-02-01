@@ -3,15 +3,20 @@ import { connect } from 'react-redux';
 
 //import FavoriteCard from '../FavoriteCard/FavoriteCard.js'; 
 
-class FavoriteGifs extends Component {
+class FavoriteButton extends Component {
+
+    addFavorite = () => {
+        console.log('this is addGifs');
+        const action = { type: 'ADD_FAVORITE'} // waiting on payload from ImageCard...
+        this.props.dispatch(action);
+
+    }
+
+
     render() {
         return (
             <div>
-                <Header />
-                {/* { this.props.reduxStore.favoritesReducer.map((favorite) => {
-                        return <FavoriteCard key={favorite.id} favorite={favorite} />
-                    });
-                } */}
+               <button onClick={this.addFavorite.gifs}>Add To Favorite</button>
             </div>
         );
     }
@@ -20,4 +25,4 @@ class FavoriteGifs extends Component {
 const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore
 });
-export default connect(mapReduxStoreToProps)(FavoriteGifs);
+export default connect(mapReduxStoreToProps)(FavoriteButton);

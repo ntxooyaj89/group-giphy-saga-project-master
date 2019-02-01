@@ -10,6 +10,8 @@ class SearchGif extends Component {
                 <Header titleText="Search Gifs" />
                 <SearchForm />
                 {JSON.stringify(this.props.reduxStore.searchReducer)}
+                
+            
             </div>
         )
     }
