@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './../Header/Header.js';
 import SearchGif from './../SearchGif/SearchGif.js';
+import SearchForm from './../SearchForm/SearchForm'
 
 import { HashRouter as Router, Route, } from 'react-router-dom';
 
