@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
-
+import './Header.css';
 
 class Header extends Component {
     render() {
         return(
-            <div>
-                <h1>Giphy search</h1>
-            </div>
+            <header>
+                <h1>{this.props.titleText}</h1>
+            </header>
         )
     }
 }

@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import Header from './../Header/Header.js';
-import SearchForm from './../SearchForm/SearchForm.js';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import FavoriteGifs from '../FavoriteGifs/FavoriteGifs.js';
+import SearchGif from './../SearchGif/SearchGif.js';
 
 
 class App extends Component {
-
   render() {
     return (
-      <div>
-        <Header className='App-header'/>
-        <SearchForm />
+      <div className="App">
+        <Router>
+          <div>
+            <Route exact path="/" component={SearchGif} />
+            <Route exact path="/search" component={SearchGif} />
+            <Route exact path="/favorite" component={FavoriteGifs} />
+          </div>
+        </Router>
       </div>
     );
   }

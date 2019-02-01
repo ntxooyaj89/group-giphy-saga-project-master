@@ -17,12 +17,14 @@ class SearchForm extends Component {
     
     handleSearch = (event) => {
         event.preventDefault();
-        console.log('search button clicked');
+        const action = { type: 'SEARCH_GIFS', payload: this.state.category };
+        this.props.dispatch(action);
     }
 
     render() {
         return(
             <div>
+                <h3>This is the search form:</h3>
                 <form className="searchForm">
                   <input type="text" placeholder="Search.." id="search" onChange={this.handleChange}/>
                   <button type="submit" onClick={this.handleSearch}>Search</button>
