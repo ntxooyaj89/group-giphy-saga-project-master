@@ -18,7 +18,7 @@ class ImageCard extends Component {
             //happens on search page
             console.log('search image');
             //image source with class cardImage
-            return <img className='cardImage' src='https://media1.giphy.com/media/3og0IHxCPD1oAQQZPi/200_s.gif' alt='placeholder image'/>
+            return <img className='cardImage' src={this.props.imageSource.images.fixed_height_still.url} alt='placeholder image'/>
         }
     }
 
