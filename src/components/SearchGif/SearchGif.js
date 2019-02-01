@@ -11,13 +11,13 @@ class SearchGif extends Component {
             <div>
                 <Header titleText="Search Gifs" />
                 <SearchForm />
+
                 {this.props.reduxStore.searchReducer.data !== undefined
                     && 
                     this.props.reduxStore.searchReducer.data.map((imageSource, index) => 
                         <ImageCard key={index} imageSource={imageSource} history={this.props.history}/>
                         )
                 }
-
 
             </div>
         )

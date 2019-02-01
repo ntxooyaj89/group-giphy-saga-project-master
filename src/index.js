@@ -14,13 +14,14 @@ function* rootSaga() {
     yield takeEvery('ADD_FAVORITE', addFavorite);
     yield takeEvery('FETCH_FAVORITES', fetchFavorites);
     yield takeEvery('SEARCH_GIFS', searchGifs);
+    yield takeEvery('SET_CATEGORY', setCategory)
 }
 
 function* addFavorite(action) {
     try {
         yield axios.post('/api/favorite', action.payload);
         const nextAction = { type: 'FETCH_FAVORITE' };
-        yield put(nextAction)
+        yield put(nextAction);
     } catch (error) {
         console.log('There is error in POST', error);
     }
@@ -36,6 +37,18 @@ function* fetchFavorites(action) {
         console.log(error);
         alert(error);
     }
+}
+
+function* setCategory(action) {
+    try {
+        // TODO: Implement axios.put
+        const category = yield axios.put;
+        const nextAction = { type: 'FETCH_FAVORITE' };
+        yield put(nextAction);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    } 
 }
 
 // Sends an axios request to route GET /api/search
