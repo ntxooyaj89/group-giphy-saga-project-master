@@ -4,8 +4,15 @@ import { connect } from 'react-redux';
 import Header from '../Header/Header.js';
 import FavoriteButton from './../FavoriteButton/FavoriteButton'
 import ImageCard from '../ImageCard/ImageCard.js'; 
+import { put } from "redux-saga/effects";
 
 class FavoriteGifs extends Component {
+
+    componentDidMount(){
+        const action = { type: 'FETCH_FAVORITES'};
+        this.props.dispatch(action);
+    }
+
     render() {
         return (
             <div>

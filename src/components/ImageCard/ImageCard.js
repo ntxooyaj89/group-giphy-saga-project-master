@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './ImageCard.css';
+import FavoriteButton from '../FavoriteButton/FavoriteButton.js';
 
 ///////////////////////Needs props.history!!!!
 
@@ -12,6 +13,7 @@ class ImageCard extends Component {
             //happens on favorite page
             console.log('fav image');
             //image source with class cardImage
+            return <img className='cardImage' src={this.props.favorite.url} alt='placeholder image'/>
             
         }
         else{
@@ -30,7 +32,7 @@ class ImageCard extends Component {
         }
         else{
             //happens on search page
-            return <button>favorite button</button>
+            return <FavoriteButton url={this.props.imageSource.images.fixed_height_still.url}/>
         }
     }
 
