@@ -21,7 +21,7 @@ function* addFavorite(action) {
     try {
         yield axios.post('/api/favorite', action.payload);
         const nextAction = { type: 'FETCH_FAVORITE' };
-        yield put(nextAction)
+        yield put(nextAction);
     } catch (error) {
         console.log('There is error in POST', error);
     }
@@ -40,9 +40,15 @@ function* fetchFavorites(action) {
 }
 
 function* setCategory(action) {
-    try{
-        const category=yield axios.post
-    }
+    try {
+        // TODO: Implement axios.put
+        const category = yield axios.put;
+        const nextAction = { type: 'FETCH_FAVORITE' };
+        yield put(nextAction);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    } 
 }
 
 // Sends an axios request to route GET /api/search
