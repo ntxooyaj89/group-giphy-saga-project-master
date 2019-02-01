@@ -8,7 +8,7 @@ class FavoriteGifs extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header titleText="My Favorite Gifs" />
                 {/* { this.props.reduxStore.favoritesReducer.map((favorite) => {
                         return <FavoriteCard key={favorite.id} favorite={favorite} />
                     });
