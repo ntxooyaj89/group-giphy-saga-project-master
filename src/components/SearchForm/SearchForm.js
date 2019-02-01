@@ -17,7 +17,8 @@ class SearchForm extends Component {
     
     handleSearch = (event) => {
         event.preventDefault();
-        console.log('search button clicked');
+        const action = { type: 'SEARCH_GIFS', payload: this.state.category };
+        this.props.dispatch(action);
     }
 
     render() {

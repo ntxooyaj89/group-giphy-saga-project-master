@@ -9,9 +9,11 @@ class SearchGif extends Component {
             <div>
                 <Header titleText="Search Gifs" />
                 <SearchForm />
+                {JSON.stringify(this.props.reduxStore.searchReducer)}
             </div>
         )
     }
 }
 
-export default connect()(SearchGif);
+const mapReduxStoreToProps = (reduxStore) => ({reduxStore}); 
+export default connect(mapReduxStoreToProps)(SearchGif);
