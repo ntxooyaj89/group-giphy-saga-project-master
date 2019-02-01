@@ -14,6 +14,7 @@ function* rootSaga() {
     yield takeEvery('ADD_FAVORITE', addFavorite);
     yield takeEvery('FETCH_FAVORITES', fetchFavorites);
     yield takeEvery('SEARCH_GIFS', searchGifs);
+    yield takeEvery('SET_CATEGORY', setCategory)
 }
 
 function* addFavorite(action) {
@@ -35,6 +36,12 @@ function* fetchFavorites(action) {
     } catch (error) {
         console.log(error);
         alert(error);
+    }
+}
+
+function* setCategory(action) {
+    try{
+        const category=yield axios.post
     }
 }
 
