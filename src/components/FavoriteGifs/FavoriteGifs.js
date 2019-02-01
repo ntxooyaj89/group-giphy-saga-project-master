@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 
 import Header from '../Header/Header.js';
+import FavoriteButton from './../FavoriteButton/FavoriteButton'
 import ImageCard from '../ImageCard/ImageCard.js'; 
 
 class FavoriteGifs extends Component {
