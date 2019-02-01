@@ -1,0 +1,11 @@
+.imageCard{
+    width: 250px;
+    height: 300px;
+    border-style: ridge;
+    float: left;
+}
+
+.cardImage{
+    max-width: 250px;
+    max-height: 250px;
+}
